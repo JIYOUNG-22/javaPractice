@@ -1,4 +1,4 @@
-package com.dyong.chapter04.control_flow.level04;
+package com.dyong.chapter04.control_flow.section01.conditional.level04;
 
 import java.util.Scanner;
 
