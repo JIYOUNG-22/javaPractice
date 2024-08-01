@@ -3,13 +3,13 @@ package com.dyong.chapter03.method_and_api.level02;
 public class RandomMaker {
 
     public static int randomNumber(int min, int max){
-        return (int) (Math.random() * (max - min) + min);
+        return (int) (Math.random() * (max - min + 1) + min);
     }
 
     public static String randomUpperAlpabet(int length){
         String word = "";
         for(int i = 0; i < length; i++){
-            char alphabet = (char) (int) (Math.random() * (90-65) + 65);
+            char alphabet = (char) (int) (Math.random() * (90-65+1) + 65);
             word += alphabet;
         }
         return word;
