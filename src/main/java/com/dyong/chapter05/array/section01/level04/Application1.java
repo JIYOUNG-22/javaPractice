@@ -15,6 +15,7 @@ public class Application1 {
                 }
             }
         }
+        Arrays.sort(lotto);
         System.out.print(Arrays.toString(lotto));
     }
 }
