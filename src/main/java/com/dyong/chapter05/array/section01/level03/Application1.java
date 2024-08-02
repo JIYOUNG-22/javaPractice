@@ -1,4 +1,4 @@
-package com.dyong.chapter05.array.level03;
+package com.dyong.chapter05.array.section01.level03;
 
 import java.util.Arrays;
 import java.util.Scanner;

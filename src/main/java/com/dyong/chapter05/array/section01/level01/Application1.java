@@ -1,4 +1,4 @@
-package com.dyong.chapter05.array.level01;
+package com.dyong.chapter05.array.section01.level01;
 
 import java.util.Arrays;
 
