@@ -12,6 +12,14 @@ public class Application1 {
         System.out.print("세로 열의 수를 입력하세요 : ");
         int column = scanner.nextInt();
 
+        while(row<1 || row>10 || column<1 || column>10){
+            System.out.println("반드시 1~10까지의 정수를 입력해야 합니다. 다시 입력하세요.");
+            System.out.print("가로 행의 수를 입력하세요 : ");
+            row = scanner.nextInt();
+            System.out.print("세로 열의 수를 입력하세요 : ");
+            column = scanner.nextInt();
+        }
+
         char[][] array = new char[row][column];
 
         for(int i = 0; i<array.length; i++){
