@@ -1,10 +1,35 @@
 package com.dyong.chapter04.control_flow.section02.looping_and_branching.level04;
 
+import java.util.Arrays;
+import java.util.Scanner;
+
 public class Application1 {
     public static void main(String[] args) {
 
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("문자열을 입력하세요 : ");
+        String str = scanner.nextLine();
+        System.out.print("숫자를 입력하세요 : ");
+        int num = scanner.nextInt();
+
+        char[] lockstr = new char[str.length()];
+
+        for (int i = 0; i < str.length(); i++) {
+            if (!(str.charAt(i) >= 'A' && str.charAt(i) <= 'Z' || str.charAt(i) >= 'a' && str.charAt(i) <= 'z')) {
+                lockstr[i] = str.charAt(i);
+            } else if(str.charAt(i) >= 'A' && str.charAt(i) <= 'Z') {
+                lockstr[i] = (char) (str.charAt(i) + (str.charAt(i)+(num%26) > 'Z' ? (num%26)-26 : num % 26));
+            } else {
+                lockstr[i] = (char) (str.charAt(i) + (str.charAt(i)+(num%26) > 'z' ? (num%26)-26 : num % 26));
+            }
+        }
+
+        System.out.println(Arrays.toString(lockstr));
     }
+
+
 }
+
 
 
 /* 어떤 문장의 각 알파벳을 일정한 거리만큼 밀어서
@@ -31,3 +56,39 @@ public class Application1 {
  * -- 출력 예시 --
  * b C a
  * */
+
+
+// 답안
+/*
+ Scanner sc = new Scanner(System.in);
+
+        System.out.print("문자열울 입력하세요 : ");
+        String s = sc.nextLine();
+        System.out.print("숫자를 입력하세요 : ");
+        int num = sc.nextInt();
+
+        String result = "";
+        int mod = num % 26;
+
+        for(int i = 0; i < s.length(); i++) {
+            char temp = s.charAt(i);
+
+            if (temp >= 'a' && temp <= 'z') {
+                temp = (char) (temp + mod);
+                if (temp > 'z') {
+                    temp -= 26;
+                }
+            } else if (temp >= 'A' && temp <= 'Z') {
+                temp = (char) (temp + mod);
+                if (temp > 'Z') {
+                    temp -= 26;
+                }
+            }
+            result += temp;
+
+        }
+
+        System.out.println(result);
+	}
+
+ */
