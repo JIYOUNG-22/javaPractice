@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Application2 {
     public static void main(String[] args) {
         Random random = new Random();
-        int randomNum = random.nextInt(99) + 1;
+        int randomNum = random.nextInt(100) + 1;
 
         Scanner scanner = new Scanner(System.in);
         System.out.print("정수를 입력하세요 : ");
