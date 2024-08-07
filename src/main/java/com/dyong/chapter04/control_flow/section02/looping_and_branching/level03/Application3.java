@@ -6,22 +6,30 @@ public class Application3 {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("문자열 입력");
+
+        System.out.print("문자열 입력 : ");
         String word = scanner.nextLine();
 
+        char[] wordCharArray = word.toCharArray();
 
-//        for(int i=0; i<=word.length(); i++){
-//            if(word.CharAt(i)<"A" && word.CharAt(i)>"Z" || word.CharAt(i)<"a" && word.CharAt(i)>"z"){
-//                System.out.println("영문자가 아닌 문자가 포함되어 있습니다.");
-//                break;
-//            }
-//
-//            }
-//        }
-//
-//        System.out.print("문자 입력");
-//        char alphabet = scanner.nextLine().charAt(0);
+        boolean check = false;
+        int count = 0;
 
+        for(int i=0; i<word.length(); i++){
+            if(wordCharArray[i] < 'A' || (wordCharArray[i] > 'Z' && wordCharArray[i] < 'a') || wordCharArray[i] > 'z' )
+                check = true;
+        }
+
+        if(!check) {
+            System.out.print("문자 입력 : ");
+            char alphabet = scanner.nextLine().charAt(0);
+            for(int j=0; j<word.length(); j++){
+                if(wordCharArray[j]==(alphabet)) count++;
+            }
+            System.out.println("포함된 갯수 : " + count + "개");
+        } else {
+            System.out.println("영문자가 아닌 문자가 포함되어 있습니다.");
+        }
 
     }
 }

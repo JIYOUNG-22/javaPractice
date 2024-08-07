@@ -1,7 +1,44 @@
 package com.dyong.chapter04.control_flow.section02.looping_and_branching.level04;
 
+import java.util.Scanner;
+
+
+// 다시 풀어보기!
+
 public class Application2 {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("받으신 금액을 입력하세요 : ");
+        int money = scanner.nextInt();
+        System.out.print("상품 가격을 입력하세요 : ");
+        int price = scanner.nextInt();
+
+        int change = money - price;
+        int currency = 50000;
+        boolean switchcurrency = true;
+
+        System.out.println("============================");
+
+        while(currency>5) {
+            if (currency >= 1000) {
+                System.out.println(currency + "원권 지폐 " + (change / currency) + "장");
+            } else {
+                System.out.println(currency + "원권 동전 " + (change / currency) + "개");
+            }
+
+            change %= currency;
+
+            if (switchcurrency) {
+                currency /= 5;
+            } else {
+                currency /= 2;
+            }
+
+            switchcurrency = !switchcurrency;
+        }
+
+        System.out.println("============================");
+        System.out.println("거스름돈 : " + (money-price) + "원");
 
     }
 }
